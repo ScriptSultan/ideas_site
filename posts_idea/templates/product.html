@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}{{ phone.name }}{% endblock %}
+
+{% block content %}
+  <div class="container">
+  <div class="header">
+    <h5>
+      <a href="{% url 'catalog' %}">Вернуться в каталог</a>
+    </h5>
+    {% for place in places %}
+      <h1>{{ place.name }}</h1>
+      </div>
+
+      <div class="content">
+        <img src="{{ place.one_photo_place }}" alt="{{ place.name }}"/>
+        <div>Стоимость: {{ place.price }} ₽</div>
+        <div>Описание: {{ place.description }}</div>
+      </div>
+    {% endfor %}
+{% endblock %}

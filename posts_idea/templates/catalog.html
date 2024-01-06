@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Каталог{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="header">
+      <h1>Идеи для свиданий</h1>
+    </div>
+
+    <div class="sort-block">
+<!--      <span class="sort-item">Сортировать по:</span>-->
+<!--      <a class="sort-item" href="?sort=name">названию</a>-->
+<!--      <a class="sort-item" href="?sort=min_price">начиная с дешёвых</a>-->
+<!--      <a class="sort-item" href="?sort=max_price">начиная с дорогих</a>-->
+    </div>
+
+    <div class="content">
+      {% for places in places_posts %}
+        <div class="places">
+            <img src="{{ places.one_photo_place }}"/>
+            <h1>{{ places.name_place }}</h1>
+            <h5> {{ places.place_description }}</h5>
+            <h6> {{ places.character_place }}</h6>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
